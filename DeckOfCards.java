@@ -86,10 +86,10 @@ public class DeckOfCards extends JFrame{
 		
 		
 			panel.repaint();
-			IM1.setIcon(deck[array[0]);
-			IM2.setIcon(deck[array[1]);
-			IM3.setIcon(deck[array[2]);
-			IM4.setIcon(deck[array[3]);	
+			IM1.setIcon(deck[array[0]]);
+			IM2.setIcon(deck[array[1]]);
+			IM3.setIcon(deck[array[2]]);
+			IM4.setIcon(deck[array[3]]);	
 		}
 	}
 }
