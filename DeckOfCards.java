@@ -18,21 +18,23 @@ public class DeckOfCards extends JFrame{
 		for(int i = 0 ; i <52 ;i++){
 			deck[i] = new ImageIcon((getClass().getResource("card/"+(i+1)+".png")));
 		}
-		int a,b,c,d;
+		int[] array = new  int[4];
 		//隨機抽4張不同的排
-		do{	
-			a = (int)(Math.random()*52);
-			b = (int)(Math.random()*52);
-			c = (int)(Math.random()*52);
-			d = (int)(Math.random()*52);
-		}while(a==b||a==c||a==d||b==c||b==d||c==d);
+		for(int i=0;i < 4;i++){
+   			array[i] =  (int)(Math.random()* 52);
+			for(int j=0;j<i;j++){ 
+      				while(array[i]==array[j]){
+             				array[i] =  (int)(Math.random()* 52);
+           			}
+     			 } 
+  		}
 		
 		//四張牌給圖跟印出
 		panel.setLayout(new GridLayout(1,4,7,7));
-		IM1 = new JLabel(deck[a]);
-		IM2 = new JLabel(deck[b]);
-		IM3 = new JLabel(deck[c]);
-		IM4 = new JLabel(deck[d]);
+		IM1 = new JLabel(deck[array[0]]);
+		IM2 = new JLabel(deck[array[1]]);
+		IM3 = new JLabel(deck[array[2]]);
+		IM4 = new JLabel(deck[array[3]]);
 		
 		panel.add(IM1);
 		panel.add(IM2);
@@ -70,22 +72,24 @@ public class DeckOfCards extends JFrame{
 		
 	//按鈕的動作
 	class Refresh implements ActionListener{
-		int a , b , c , d ;
+		int[] array = new  int[4];
 		@Override
 		public void actionPerformed(ActionEvent E){
-			do{	
-				a = (int)(Math.random()*52);
-				b = (int)(Math.random()*52);
-				c = (int)(Math.random()*52);
-				d = (int)(Math.random()*52);
-			}while(a==b||a==c||a==d||b==c||b==d||c==d);
+			for(int i=0;i < 4;i++){
+   				array[i] =  (int)(Math.random()* 52);
+				for(int j=0;j<i;j++){ 
+      					while(array[i]==array[j]){
+             					array[i] =  (int)(Math.random()* 52);
+           				}
+     				 } 
+  			}
 		
 		
 			panel.repaint();
-			IM1.setIcon(deck[a]);
-			IM2.setIcon(deck[b]);
-			IM3.setIcon(deck[c]);
-			IM4.setIcon(deck[d]);	
+			IM1.setIcon(deck[array[0]);
+			IM2.setIcon(deck[array[1]);
+			IM3.setIcon(deck[array[2]);
+			IM4.setIcon(deck[array[3]);	
 		}
 	}
 }
