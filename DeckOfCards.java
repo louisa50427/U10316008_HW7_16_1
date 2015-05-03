@@ -28,7 +28,7 @@ public class DeckOfCards extends JFrame{
 		}while(a==b||a==c||a==d||b==c||b==d||c==d);
 		
 		//四張牌給圖跟印出
-		panel.setLayout(new GridLayout(1,4,0,0));
+		panel.setLayout(new GridLayout(1,4,7,7));
 		IM1 = new JLabel(deck[a]);
 		IM2 = new JLabel(deck[b]);
 		IM3 = new JLabel(deck[c]);
